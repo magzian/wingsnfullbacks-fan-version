@@ -22,7 +22,7 @@ export default function LoginScreen() {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        navigation.navigate('TabNavigation');
+        navigation.navigate('HomeScreen'); // Navigate to HomeScreen after successful login
       }, 1500);
     } else {
       Alert.alert('Login Failed', 'Incorrect username or password.', [
