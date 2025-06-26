@@ -8,7 +8,7 @@ const DarkTheme = {
     secondary: '#00BFFF', // DeepSkyBlue
     card: '#111111',
     border: '#333333',
-    notification: '#3399FF',
+    notification: '#3399FF', 
   },
 };
 
