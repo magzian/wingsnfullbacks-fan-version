@@ -21,6 +21,7 @@ type RootStackParamList = {
   HomeScreen: undefined;
   LiveScoresScreen: undefined;
   ProfileScreen: undefined;
+  BuyTicketScreen: undefined;
   // Add other screens here as needed
 };
 
@@ -34,10 +35,11 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Animatable.View animation="slideInDown" duration={800} style={styles.header}>
-        <Text style={styles.brand}>Wings & Fullbacks</Text>
+      <View style={styles.header}>
+        <Animatable.Text animation="slideInLeft" duration={1200} style={styles.brand}>Wings<Text style={styles.and}>&</Text></Animatable.Text>
+        <Animatable.Text animation="slideInRight" duration={1500} style={styles.fullbacks}>Fullbacks</Animatable.Text>
         <Text style={styles.subtitle}>Where Passion Meets Community</Text>
-      </Animatable.View>
+      </View>
       <Animatable.View animation="slideInLeft" duration={1200} style={styles.carouselWrapper}>
         <ScrollView
           horizontal
@@ -63,7 +65,7 @@ export default function HomeScreen() {
           <Ionicons name="person-circle-outline" size={28} color={DarkTheme.colors.primary} />
           <Text style={styles.linkText}>Profile</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.linkBtn}>
+        <TouchableOpacity style={styles.linkBtn} onPress={() => navigation.navigate('BuyTicketScreen')}>
           <Ionicons name="ticket-outline" size={28} color={DarkTheme.colors.primary} />
           <Text style={styles.linkText}>Buy Ticket</Text>
         </TouchableOpacity>
@@ -87,15 +89,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 32,
   },
+  and: {
+    color: DarkTheme.colors.primary,
+  },
+  fullbacks: {
+    color: DarkTheme.colors.text,
+    fontFamily: 'Nunito-Bold',
+    fontSize: 52,
+    letterSpacing: 2.5,
+  },
   header: {
-    alignItems: 'center',
     marginBottom: 16,
   },
   brand: {
     color: DarkTheme.colors.primary,
     fontFamily: 'Nunito-ExtraBold',
     fontSize: 32,
-    letterSpacing: 1.2,
+    letterSpacing: 1.7,
   },
   subtitle: {
     color: DarkTheme.colors.text,

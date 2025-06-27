@@ -9,6 +9,7 @@ import SignUpScreen from '../screens/SignUpScreen'
 import WelcomeScreen from '../screens/WelcomeScreen'
 import LiveScoresScreen from '../screens/LiveScoresScreen'
 import ProfileScreen from '../screens/ProfileScreen'
+import BuyTicketScreen from '../screens/BuyTicketScreen'
 /* import TabNavigation from './TabNavigation'  */
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ export default function appNavigation() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="LiveScoresScreen" component={LiveScoresScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="BuyTicketScreen" component={BuyTicketScreen} />
     </Stack.Navigator>
     </NavigationContainer>
   )
